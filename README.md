@@ -2233,20 +2233,19 @@ Source: <https://tmuxcheatsheet.com>
 
 | **Command**                               | **Description**                                                              |
 |-------------------------------------------|------------------------------------------------------------------------------|
-| `tmux` or `tmux new`                      | Start a new session                                                          |
-| `tmux new-session -A -s mysession`        | Start a new session or attach to an existing session named `mysession`       |
-| `tmux new -s mysession`                   | Start a new session with the name `mysession`                                |
+| `tmux`                                    | Start a new session                                                          |
+| `tmux new -s mysession`                   | Start a new session with the name `mysession`n                               |
+| `tmux attach`                             | Attach to the last session                                                   |
+| `tmux attach -t mysession`                | Attach to a session with the name `mysession`                                |
+| `tmux attach -d`                          | Detach others on the session                                                 |
+| `tmux ls` or `tmux list-sessions`         | Show all sessions                                                            |
 | `tmux kill-session`                       | Kill/delete the current session                                              |
 | `tmux kill-session -t mysession`          | Kill/delete session `mysession`                                              |
 | `tmux kill-session -a`                    | Kill/delete all sessions but the current                                     |
 | `tmux kill-session -a -t mysession`       | Kill/delete all sessions but `mysession`                                     |
 | `Ctrl + b` then `$`                       | Rename session                                                               |
 | `Ctrl + b` then `d`                       | Detach from session                                                          |
-| `tmux attach -d`                          | Detach others on the session                                                 |
-| `tmux ls` or `tmux list-sessions`         | Show all sessions                                                            |
 | `Ctrl + b` then `s`                       | Show all sessions                                                            |
-| `tmux attach`                             | Attach to the last session                                                   |
-| `tmux attach -t mysession`                | Attach to a session with the name `mysession`                                |
 | `Ctrl + b` then `w`                       | Session and window preview                                                   |
 | `Ctrl + b` then `(`                      | Move to previous session                                                     |
 | `Ctrl + b` then `)`                      | Move to next session                                                         |
