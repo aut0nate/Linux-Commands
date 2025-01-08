@@ -2264,45 +2264,116 @@ reset
 
 Here’s a handy table of the default **tmux** keyboard shortcuts to reference. These shortcuts assume the default prefix is `Ctrl+b`.
 
-| **Action**                        | **Shortcut**             | **Description**                                                                 |
-|------------------------------------|--------------------------|---------------------------------------------------------------------------------|
-| **Session Management**             |                          |                                                                                 |
-| New Session                        | `tmux new-session`       | Start a new tmux session.                                                      |
-| Detach Session                     | `Ctrl+b d`               | Detach from the current session.                                               |
-| List Sessions                      | `tmux list-sessions`     | Show all running tmux sessions.                                                |
-| Attach Session                     | `tmux attach-session -t` | Reattach to a detached session.                                                |
-| Rename Session                     | `Ctrl+b $`               | Rename the current session.                                                    |
-| Kill Session                       | `tmux kill-session -t`   | Terminate a specific session.                                                  |
-| Switch Between Sessions            | `tmux switch-session -t` | Switch to another session.                                                     |
-| **Window Management**              |                          |                                                                                 |
-| New Window                         | `Ctrl+b c`               | Create a new window.                                                           |
-| Close Current Window               | `Ctrl+b &`               | Close the current window.                                                      |
-| Rename Current Window              | `Ctrl+b ,`               | Rename the current window.                                                     |
-| List Windows                       | `Ctrl+b w`               | Show a list of all windows.                                                    |
-| Next Window                        | `Ctrl+b n`               | Move to the next window.                                                       |
-| Previous Window                    | `Ctrl+b p`               | Move to the previous window.                                                   |
-| Switch to Window by Number         | `Ctrl+b <number>`        | Switch to a window by its index number (0-9).                                   |
-| **Pane Management**                |                          |                                                                                 |
-| Split Pane Horizontally            | `Ctrl+b "`               | Split the current pane into two (top and bottom).                               |
-| Split Pane Vertically              | `Ctrl+b %`               | Split the current pane into two (left and right).                               |
-| Close Current Pane                 | `Ctrl+b x`               | Close the current pane.                                                        |
-| Resize Pane                        | `Ctrl+b` + Arrow Keys    | Resize the active pane.                                                        |
-| Toggle Between Panes               | `Ctrl+b o`               | Switch to the next pane.                                                       |
-| Switch Pane Directionally          | `Ctrl+b` + Arrow Keys    | Move between panes in a specific direction.                                     |
-| Swap Panes                         | `Ctrl+b {` or `Ctrl+b }` | Move the current pane left (`{`) or right (`}`).                                |
-| Toggle Pane Synchronization        | `Ctrl+b :` + `setw synchronize-panes on/off` | Synchronize input to all panes in the window.                     |
-| **Copy Mode & Scrolling**          |                          |                                                                                 |
-| Enter Copy Mode                    | `Ctrl+b [`               | Enter copy mode to scroll and copy text.                                        |
-| Exit Copy Mode                     | `q`                      | Leave copy mode.                                                               |
-| Scroll in Copy Mode                | Arrow Keys / `PgUp`/`PgDn` | Scroll through history in copy mode.                                          |
-| Start Selection in Copy Mode       | `Space`                  | Begin text selection in copy mode.                                             |
-| Copy Selected Text                 | `Enter`                  | Copy the selected text to the buffer.                                          |
-| Paste Copied Text                  | `Ctrl+b ]`               | Paste the last copied text.                                                    |
-| **Other Commands**                 |                          |                                                                                 |
-| Command Prompt                     | `Ctrl+b :`               | Open the command prompt for executing tmux commands.                           |
-| Show Time                          | `Ctrl+b t`               | Display the current time.                                                      |
-| Reload Config File                 | `Ctrl+b :` + `source-file ~/.tmux.conf` | Reload the tmux configuration file.                                 |
-| Kill tmux Server                   | `tmux kill-server`       | Stop the tmux server and kill all sessions.                                    |
+### Tmux Cheatsheet
+
+#### Sessions
+
+| **Command**                               | **Description**                                                              |
+|-------------------------------------------|------------------------------------------------------------------------------|
+| `tmux` or `tmux new`                      | Start a new session                                                          |
+| `tmux new-session -A -s mysession`        | Start a new session or attach to an existing session named `mysession`       |
+| `tmux new -s mysession`                   | Start a new session with the name `mysession`                                |
+| `tmux kill-session`                       | Kill/delete the current session                                              |
+| `tmux kill-session -t mysession`          | Kill/delete session `mysession`                                              |
+| `tmux kill-session -a`                    | Kill/delete all sessions but the current                                     |
+| `tmux kill-session -a -t mysession`       | Kill/delete all sessions but `mysession`                                     |
+| `Ctrl + b` then `$`                       | Rename session                                                               |
+| `Ctrl + b` then `d`                       | Detach from session                                                          |
+| `tmux attach -d`                          | Detach others on the session                                                 |
+| `tmux ls` or `tmux list-sessions`         | Show all sessions                                                            |
+| `Ctrl + b` then `s`                       | Show all sessions                                                            |
+| `tmux attach`                             | Attach to the last session                                                   |
+| `tmux attach -t mysession`                | Attach to a session with the name `mysession`                                |
+| `Ctrl + b` then `w`                       | Session and window preview                                                   |
+| `Ctrl + b` then `(`                      | Move to previous session                                                     |
+| `Ctrl + b` then `)`                      | Move to next session                                                         |
+
+---
+
+#### Windows
+
+| **Command**                               | **Description**                                                              |
+|-------------------------------------------|------------------------------------------------------------------------------|
+| `tmux new -s mysession -n mywindow`       | Start a new session with the name `mysession` and window `mywindow`          |
+| `Ctrl + b` then `c`                       | Create a new window                                                          |
+| `Ctrl + b` then `,`                       | Rename the current window                                                    |
+| `Ctrl + b` then `&`                       | Close the current window                                                     |
+| `Ctrl + b` then `w`                       | List windows                                                                 |
+| `Ctrl + b` then `p`                       | Move to the previous window                                                  |
+| `Ctrl + b` then `n`                       | Move to the next window                                                      |
+| `Ctrl + b` then `[0-9]`                   | Switch/select window by number                                               |
+| `Ctrl + b` then `l`                       | Toggle last active window                                                    |
+| `swap-window -s 2 -t 1`                   | Swap window 2 (source) and 1 (destination)                                   |
+| `swap-window -t -1`                       | Move current window to the left by one position                              |
+| `move-window -s src_ses:win -t target_ses:win` | Move window from source session to target session                          |
+| `move-window -r`                          | Renumber windows to remove gaps in the sequence                              |
+
+---
+
+#### Panes
+
+| **Command**                               | **Description**                                                              |
+|-------------------------------------------|------------------------------------------------------------------------------|
+| `Ctrl + b` then `;`                       | Toggle last active pane                                                      |
+| `split-window -h` or `Ctrl + b` then `%`  | Split pane horizontally                                                     |
+| `split-window -v` or `Ctrl + b` then `"`  | Split pane vertically                                                       |
+| `join-pane -s 2 -t 1`                     | Join two windows as panes                                                   |
+| `Ctrl + b` then `{`                       | Move the current pane left                                                  |
+| `Ctrl + b` then `}`                       | Move the current pane right                                                 |
+| `Ctrl + b` then arrow keys                | Switch to pane in the specified direction                                   |
+| `setw synchronize-panes`                  | Toggle synchronize-panes                                                    |
+| `Ctrl + b` then `Space`                   | Toggle between pane layouts                                                 |
+| `Ctrl + b` then `o`                       | Switch to the next pane                                                     |
+| `Ctrl + b` then `q`                       | Show pane numbers                                                           |
+| `Ctrl + b` then `q` then `[0-9]`          | Switch/select pane by number                                                |
+| `Ctrl + b` then `z`                       | Toggle pane zoom                                                            |
+| `Ctrl + b` then `!`                       | Convert pane into a window                                                  |
+| `Ctrl + b` then `x`                       | Close the current pane                                                      |
+
+---
+
+#### Copy Mode
+
+| **Command**                               | **Description**                                                              |
+|-------------------------------------------|------------------------------------------------------------------------------|
+| `setw -g mode-keys vi`                    | Use vi keys in buffer                                                       |
+| `Ctrl + b` then `[`                       | Enter copy mode                                                             |
+| `Ctrl + b` then `PgUp`                    | Enter copy mode and scroll one page up                                      |
+| `q`                                       | Quit mode                                                                   |
+| `g`                                       | Go to the top line                                                          |
+| `G`                                       | Go to the bottom line                                                       |
+| `h`, `j`, `k`, `l`                        | Move cursor left, down, up, right                                           |
+| `w`, `b`                                  | Move cursor forward/backward by word                                        |
+| `/` or `?`                                | Search forward/backward                                                    |
+| `n`, `N`                                  | Next/previous keyword occurrence                                           |
+| `Space`                                   | Start selection                                                             |
+| `Esc`                                     | Clear selection                                                             |
+| `Enter`                                   | Copy selection                                                              |
+| `Ctrl + b` then `]`                       | Paste contents of buffer_0                                                 |
+| `capture-pane`                            | Copy entire visible contents of pane to a buffer                            |
+| `list-buffers`                            | Show all buffers                                                            |
+| `choose-buffer`                           | Show all buffers and paste selected                                         |
+
+---
+
+#### Miscellaneous
+
+| **Command**                               | **Description**                                                              |
+|-------------------------------------------|------------------------------------------------------------------------------|
+| `Ctrl + b` then `:`                       | Enter command mode                                                          |
+| `set -g OPTION`                           | Set an option for all sessions                                              |
+| `setw -g OPTION`                          | Set an option for all windows                                               |
+| `set mouse on`                            | Enable mouse mode                                                           |
+
+---
+
+#### Help
+
+| **Command**                               | **Description**                                                              |
+|-------------------------------------------|------------------------------------------------------------------------------|
+| `tmux list-keys` or `Ctrl + b` then `?`   | List key bindings                                                           |
+
+Source: <https://tmuxcheatsheet.com>
 
 [⬆ ʀᴇᴛᴜʀɴ ᴛᴏ ᴄᴏɴᴛᴇɴᴛꜱ](#contents)
 
