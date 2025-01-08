@@ -2222,47 +2222,10 @@ sudo nano /etc/anacrontab
 
 ## Terminal Multiplexers
 
-Start multiple terminal sessions. Active sessions persist reboots. `tmux` is more modern than `screen`.
-
-```bash
-# Start a new tmux session (use CTRL-b + d to detach from the session)
-tmux
-
-# List all active tmux sessions
-tmux ls
-
-# Reattach to a specific tmux session by ID (in this case, session 0)
-tmux attach -t 0
-
-# Start a new named tmux session (useful for managing multiple sessions)
-tmux new -s <session_name>
-
-# Kill a specific tmux session by ID or name
-tmux kill-session -t <session_id_or_name>
-
-# Split the current tmux window vertically
-tmux split-window -v
-
-# Split the current tmux window horizontally
-tmux split-window -h
-
-# Switch between tmux panes (use arrow keys after pressing CTRL-b)
-tmux select-pane -t <pane_number>
-
-# Resize tmux panes (use arrow keys after pressing CTRL-b + CTRL-arrow)
-tmux resize-pane -D    # Resize pane downwards
-tmux resize-pane -U    # Resize pane upwards
-tmux resize-pane -L    # Resize pane leftwards
-tmux resize-pane -R    # Resize pane rightwards
-
-# Exit the current shell or session
-exit
-
-# Reset the terminal when it becomes unreadable or the output is garbled
-reset
-```
+Tmux is terminal multiplexer that allows multiple terminal sessions to be accessed simultaneously in a single window. It enables users to run multiple command-line programs concurrently and detach processes from their controlling terminals, allowing remote sessions to remain active without being visible.
 
 Here’s a handy table of the default **tmux** keyboard shortcuts to reference. These shortcuts assume the default prefix is `Ctrl+b`.
+Source: <https://tmuxcheatsheet.com>
 
 ### Tmux Cheatsheet
 
@@ -2372,8 +2335,6 @@ Here’s a handy table of the default **tmux** keyboard shortcuts to reference. 
 | **Command**                               | **Description**                                                              |
 |-------------------------------------------|------------------------------------------------------------------------------|
 | `tmux list-keys` or `Ctrl + b` then `?`   | List key bindings                                                           |
-
-Source: <https://tmuxcheatsheet.com>
 
 [⬆ ʀᴇᴛᴜʀɴ ᴛᴏ ᴄᴏɴᴛᴇɴᴛꜱ](#contents)
 
