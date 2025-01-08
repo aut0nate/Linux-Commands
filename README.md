@@ -182,7 +182,7 @@ ls -lR
 # List files and directories in long format displayed with inode numbers
 ls -li
 
-# List files and directories in long format sorted by numbers contained within the name
+# List files and directories in long format sorted numerically by the digits in the file name
 ls -lv
 
 # List files in long format, excluding specific files by extension type
@@ -658,13 +658,13 @@ grep -v <pattern> <file>
 grep -x <pattern> <file>
 
 # List only the names of files that contain the specified pattern
-grep -l <pattern> <file>
+grep -l <pattern> <directory>
 
 # List only the names of files that do not contain the specified pattern
-grep -L <pattern> <file>
+grep -L <pattern> <directory>
 
 # Specify the search pattern directly in the command using the -e option
-grep -e <pattern> <file>
+grep -e <pattern> <directory>
 
 # Use multiple patterns from a file, where each pattern is on a new line
 grep -f <pattern_file> <file>
@@ -2261,6 +2261,48 @@ exit
 # Reset the terminal when it becomes unreadable or the output is garbled
 reset
 ```
+
+Here’s a handy table of the default **tmux** keyboard shortcuts to reference. These shortcuts assume the default prefix is `Ctrl+b`.
+
+| **Action**                        | **Shortcut**             | **Description**                                                                 |
+|------------------------------------|--------------------------|---------------------------------------------------------------------------------|
+| **Session Management**             |                          |                                                                                 |
+| New Session                        | `tmux new-session`       | Start a new tmux session.                                                      |
+| Detach Session                     | `Ctrl+b d`               | Detach from the current session.                                               |
+| List Sessions                      | `tmux list-sessions`     | Show all running tmux sessions.                                                |
+| Attach Session                     | `tmux attach-session -t` | Reattach to a detached session.                                                |
+| Rename Session                     | `Ctrl+b $`               | Rename the current session.                                                    |
+| Kill Session                       | `tmux kill-session -t`   | Terminate a specific session.                                                  |
+| Switch Between Sessions            | `tmux switch-session -t` | Switch to another session.                                                     |
+| **Window Management**              |                          |                                                                                 |
+| New Window                         | `Ctrl+b c`               | Create a new window.                                                           |
+| Close Current Window               | `Ctrl+b &`               | Close the current window.                                                      |
+| Rename Current Window              | `Ctrl+b ,`               | Rename the current window.                                                     |
+| List Windows                       | `Ctrl+b w`               | Show a list of all windows.                                                    |
+| Next Window                        | `Ctrl+b n`               | Move to the next window.                                                       |
+| Previous Window                    | `Ctrl+b p`               | Move to the previous window.                                                   |
+| Switch to Window by Number         | `Ctrl+b <number>`        | Switch to a window by its index number (0-9).                                   |
+| **Pane Management**                |                          |                                                                                 |
+| Split Pane Horizontally            | `Ctrl+b "`               | Split the current pane into two (top and bottom).                               |
+| Split Pane Vertically              | `Ctrl+b %`               | Split the current pane into two (left and right).                               |
+| Close Current Pane                 | `Ctrl+b x`               | Close the current pane.                                                        |
+| Resize Pane                        | `Ctrl+b` + Arrow Keys    | Resize the active pane.                                                        |
+| Toggle Between Panes               | `Ctrl+b o`               | Switch to the next pane.                                                       |
+| Switch Pane Directionally          | `Ctrl+b` + Arrow Keys    | Move between panes in a specific direction.                                     |
+| Swap Panes                         | `Ctrl+b {` or `Ctrl+b }` | Move the current pane left (`{`) or right (`}`).                                |
+| Toggle Pane Synchronization        | `Ctrl+b :` + `setw synchronize-panes on/off` | Synchronize input to all panes in the window.                     |
+| **Copy Mode & Scrolling**          |                          |                                                                                 |
+| Enter Copy Mode                    | `Ctrl+b [`               | Enter copy mode to scroll and copy text.                                        |
+| Exit Copy Mode                     | `q`                      | Leave copy mode.                                                               |
+| Scroll in Copy Mode                | Arrow Keys / `PgUp`/`PgDn` | Scroll through history in copy mode.                                          |
+| Start Selection in Copy Mode       | `Space`                  | Begin text selection in copy mode.                                             |
+| Copy Selected Text                 | `Enter`                  | Copy the selected text to the buffer.                                          |
+| Paste Copied Text                  | `Ctrl+b ]`               | Paste the last copied text.                                                    |
+| **Other Commands**                 |                          |                                                                                 |
+| Command Prompt                     | `Ctrl+b :`               | Open the command prompt for executing tmux commands.                           |
+| Show Time                          | `Ctrl+b t`               | Display the current time.                                                      |
+| Reload Config File                 | `Ctrl+b :` + `source-file ~/.tmux.conf` | Reload the tmux configuration file.                                 |
+| Kill tmux Server                   | `tmux kill-server`       | Stop the tmux server and kill all sessions.                                    |
 
 [⬆ ʀᴇᴛᴜʀɴ ᴛᴏ ᴄᴏɴᴛᴇɴᴛꜱ](#contents)
 
