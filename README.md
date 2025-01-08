@@ -2225,6 +2225,7 @@ sudo nano /etc/anacrontab
 Tmux is terminal multiplexer that allows multiple terminal sessions to be accessed simultaneously in a single window. It enables users to run multiple command-line programs concurrently and detach processes from their controlling terminals, allowing remote sessions to remain active without being visible.
 
 Here’s a handy table of the default **tmux** keyboard shortcuts to reference. These shortcuts assume the default prefix is `Ctrl+b`.
+
 Source: <https://tmuxcheatsheet.com>
 
 ### Tmux Cheatsheet
@@ -2238,6 +2239,7 @@ Source: <https://tmuxcheatsheet.com>
 | `tmux attach`                             | Attach to the last session                                                   |
 | `tmux attach -t mysession`                | Attach to a session with the name `mysession`                                |
 | `tmux attach -d`                          | Detach others on the session                                                 |
+| `tmux rename -t mysession newname`                | Rename a session                                                             |
 | `tmux ls` or `tmux list-sessions`         | Show all sessions                                                            |
 | `tmux kill-session`                       | Kill/delete the current session                                              |
 | `tmux kill-session -t mysession`          | Kill/delete session `mysession`                                              |
