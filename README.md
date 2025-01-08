@@ -197,6 +197,9 @@ ls -1
 # List directories in long format
 ls -ld */
 
+# List files only
+ls -p | grep -v /
+
 # List directory and file tree
 tree
 
@@ -668,6 +671,9 @@ grep -f <pattern_file> <file>
 
 # Recursively search for the pattern in the specified directory and its subdirectories
 grep -r <pattern> <directory>
+
+# Search for occurrences of <pattern> in <file> and display matching lines with line numbers (-n) and only the matching part of the line (-o)
+grep -on <pattern> <file>
 
 # Search for the whole word (case-insensitive) in the file
 grep -wi <pattern> <file>
