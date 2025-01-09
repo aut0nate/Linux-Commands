@@ -335,6 +335,10 @@ ln <file1> <file2>
 # Create a soft symbolic link
 ln -s <file/directory_source> <file/directory_source_link>
 
+# The `tee` command reads from standard input and writes to both standard output and one or more files
+# It is useful for logging or saving output while still displaying it in the terminal
+ls -lh /usr/bin/g* | tee bin_out.txt | grep -i "glow" 
+
 # Create a temporary file
 mktemp 
 
@@ -963,17 +967,14 @@ sudo -k
 # Execute a command with root privileges (useful when permission is denied for a regular user)
 sudo <command>
 
-# Open a file or directory with root privileges (useful when the file is not writable by a regular user)
-sudo nano /path/to/file
-
-# Add a user to the "sudo" or "wheel" group, granting them sudo privileges
-sudo usermod -aG <sudo_or_wheel> <username>
-
 # Safely edit the sudoers file to manage user privileges (always use visudo to avoid syntax errors)
 sudo visudo
 
 # Switch to a different user account (prompts for the user's password unless already root)
 su <username>
+
+# Switch to a different user account and load their environment (prompts for the user's password unless already root)
+su -l <username>
 
 # Display the current logged-in username
 whoami
@@ -1012,7 +1013,10 @@ groups <username>
 cat /etc/passwd
 
 # Display the contents of the /etc/group file (contains group information)
-sudo cat /etc/group
+cat /etc/group
+
+# Display the contents of the /etc/shadow file (contains encrypted password information for user accounts)
+sudo cat /etc/shadow
 
 # Change the login shell of a specified user to /usr/sbin/nologin, effectively disabling login for the user
 sudo usermod -s /usr/sbin/nologin <username>
