@@ -976,6 +976,9 @@ su <username>
 # Switch to a different user account and load their environment (prompts for the user's password unless already root)
 su -l <username>
 
+# Execute a specific command as a different user (or root if no user is specified)
+su -c "<command>" <username>
+
 # Display the current logged-in username
 whoami
 
