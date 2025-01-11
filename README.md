@@ -1347,14 +1347,11 @@ pidof <command>
 # Display all running processes for the current user in a simple format
 ps
 
-# Display a full-format listing of all processes currently running
+# Display detailed information about running processes for all users in a detailed format
+ps -au
+
+# Display detailed information about all running processes including processes not attached to a terminal, such as system daemons
 ps -aux
-
-# Display all running processes for the current user in a detailed format
-ps -f
-
-# Display detailed information about all running processes
-ps -ef
 
 # Display processes sorted by CPU usage in descending order
 ps -aux --sort=-%cpu
@@ -1362,8 +1359,17 @@ ps -aux --sort=-%cpu
 # Display processes sorted by memory usage in descending order
 ps -aux --sort=-%mem
 
+# Display all running processes for the current user in a detailed format
+ps -f
+
+# Display detailed information about all running processes
+ps -ef
+
 # Display processes for a specific user
 ps -u <username>
+
+# Display detailed information about running processes owned by a specific user
+ps -U <user> -u
 
 # Display processes for a specific user with full command line information
 ps -u <username> -f
@@ -1419,6 +1425,12 @@ kill -9 <PID>
 
 # Send a specific signal (e.g., SIGHUP) to a process
 kill -1 <PID>
+
+# Terminates all processes by name
+killall <name>
+
+# Forcefully terminates all processes by name using SIGKILL (signal 9)
+killall -9 <name>
 
 # Send a signal to all processes with a specific command name
 pkill -HUP <command_name>
