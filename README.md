@@ -1369,7 +1369,7 @@ ps -ef
 ps -u <username>
 
 # Display detailed information about running processes owned by a specific user
-ps -U <user> -u
+ps -U <username> -u
 
 # Display processes for a specific user with full command line information
 ps -u <username> -f
