@@ -7,7 +7,7 @@ This repository provides a collection of Linux commands and tools that I’ve fo
 
 Inspired by: <a href="https://github.com/trinib/Linux-Bash-Commands">trinib/Linux-Bash-Commands</a></p>
 
-### Contents
+## Contents
 
 - [Command Information](#command-information)
 - [Command History](#command-history)
