@@ -1456,14 +1456,11 @@ fg %<job_number>
 # Suspend a process running in the foreground (sends SIGTSTP)
 CTRL+Z
 
-# Sleep for 30 seconds and move the process to the background
-sleep 30 &
-
 # List all background jobs
 jobs
 
 # List all background jobs with their PIDs
-jobs -p
+jobs -l
 ```
 
 [⬆ ʀᴇᴛᴜʀɴ ᴛᴏ ᴄᴏɴᴛᴇɴᴛꜱ](#contents)
