@@ -352,7 +352,10 @@ file <file/directory>
 
 # Display file type for all files within a directory
 file /directory/*
-              
+
+# Create a file of a specific size, e.g. B,KB,MB,GB
+fallocate -l <size> <file>
+
 # Securely deletes a file by overwriting its contents ~n times, displaying progress and verbose output
 shred -vu -n <num> <file>
 ```
@@ -1650,6 +1653,9 @@ cat /proc/cpuinfo
 
 # Display a summary of CPU architecture and specifications (e.g., number of CPUs, cores, threads, CPU speed)
 lscpu
+
+# Display the number of CPU cores available
+nproc
 ```
 
 [⬆ ʀᴇᴛᴜʀɴ ᴛᴏ ᴄᴏɴᴛᴇɴᴛꜱ](#contents)
@@ -1701,6 +1707,9 @@ du /path/to/directory
 
 # Display disk usage in a human-readable format (e.g., MiB, GiB)
 du -h  # or --human-readable
+
+# Display disk usage of all files and directories in human-readable format (-h), sort the output in reverse numerical order (-rh) to show largest files first
+du -ah /path/to/directory | sort -rh | head 
 
 # Display disk usage up to a specified depth level (e.g., 1 level deep)
 du -d 1  # or --max-depth=1
