@@ -672,8 +672,11 @@ grep -l <pattern> <directory>
 # List only the names of files that do not contain the specified pattern
 grep -L <pattern> <directory>
 
-# Specify the search pattern directly in the command using the -e option
+# Search for a pattern using the -e option
 grep -e <pattern> <directory>
+
+# Specify multiple patterns using the -E option
+grep -E <pattern1|pattern2> <file>
 
 # Use multiple patterns from a file, where each pattern is on a new line
 grep -f <pattern_file> <file>
