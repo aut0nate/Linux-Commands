@@ -718,6 +718,9 @@ grep -winr <pattern>
 # Recursively search for the whole word (case-insensitive) in the current directory and all its subdirectories, displaying matching lines with line numbers
 grep -win <pattern> ./*
 
+# Search for empty lines in a file and display the line number
+grep -n "^$" <file>
+
 # Extract all email addresses from a file using a basic regular expression pattern
 grep -E '[a-z]*\.[a-z]*@[a-z]*\.[a-z]*' <file>
 
