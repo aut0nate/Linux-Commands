@@ -56,6 +56,8 @@ Inspired by: <a href="https://github.com/trinib/Linux-Bash-Commands">trinib/Linu
     - [curl](#curl)
     - [wget](#wget)
 - [Systemd](#systemd)
+  - [systemctl](#systemctl)
+  - [journalctl](#journalctl)
 - [Scheduled Tasks](#scheduled-tasks)
   - [cron](#cron)
   - [at](#cron)
@@ -2011,6 +2013,7 @@ wget ftp://username:password@ftp.example.com/file.txt
 ## Systemd
 
 ### systemctl
+
 ```bash
 # Display the status of the specified unit (e.g., service or socket), showing whether it is active, inactive, or failed
 sudo systemctl status <unit>
@@ -2050,9 +2053,6 @@ sudo systemctl edit --full <unit>
 # Reload the systemd manager configuration to apply changes made to unit files
 # (Necessary after editing or creating unit files)
 sudo systemctl daemon-reload
-
-# Show logs related to the specified unit (requires journalctl)
-sudo journalctl -u <unit>
 
 # Check whether the specified unit is enabled to start at boot
 sudo systemctl is-enabled <unit>
