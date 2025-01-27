@@ -32,6 +32,8 @@ Inspired by: <a href="https://github.com/trinib/Linux-Bash-Commands">trinib/Linu
   - [Modify User](#modify-user)
   - [Remove User](#remove-user)
   - [Add Group](#add-group)
+  - [Modify Group](#modify-group)
+  - [Remove Group](#remove-group)
 - [Text Editors](#text-editors)
   - [nano](#nano)
 - [Package Management](#package-management)
@@ -1183,18 +1185,6 @@ groupadd -g <gid> <new_group>
 
 # Create a system group (system groups typically have GIDs below 1000)
 groupadd -r <new_group>
-
-# Create a new group with a specific GID and add a comment (commonly used for group descriptions)
-groupadd -g <gid> -c "<comment>" <new_group>
-```
-
-[⬆ ʀᴇᴛᴜʀɴ ᴛᴏ ᴄᴏɴᴛᴇɴᴛꜱ](#contents)
-
-### Remove Group
-
-```bash
-# Delete a group with default settings
-groupdel <group>
 ```
 
 [⬆ ʀᴇᴛᴜʀɴ ᴛᴏ ᴄᴏɴᴛᴇɴᴛꜱ](#contents)
@@ -1228,6 +1218,15 @@ chgrp -R <group> <directory>
 
 # Retrieve information about the specified <group> from the system's group database
 getent group <group>
+```
+
+[⬆ ʀᴇᴛᴜʀɴ ᴛᴏ ᴄᴏɴᴛᴇɴᴛꜱ](#contents)
+
+### Remove Group
+
+```bash
+# Delete a group with default settings
+groupdel <group>
 ```
 
 [⬆ ʀᴇᴛᴜʀɴ ᴛᴏ ᴄᴏɴᴛᴇɴᴛꜱ](#contents)
