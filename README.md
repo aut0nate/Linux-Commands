@@ -1791,9 +1791,11 @@ ifconfig eth0 192.168.120.56
 
 # List all IP addresses assigned to the system's network interfaces
 ip addr
+ip a
 
 # Display the current routing table and routes to connected networks
-ip route show
+ip route
+ip r
 
 # Extract the IP address assigned to the eth0 network interface
 ip address | grep eth0 | grep inet | awk '{print $2}'
