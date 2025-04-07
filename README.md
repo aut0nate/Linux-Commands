@@ -1,7 +1,6 @@
 # Linux Commands & Tools Cheatsheet
 
-<p align="left">
- <img src="https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=blue" height=21 width=80>
+[![Linux](https://img.shields.io/badge/Linux-FCC624?logo=linux&logoColor=black)](#)
 
 This repository contains a collection of Linux commands and tools that I’ve found particularly useful as part of my learning process. I have grouped this into categories for easy reference.
 
