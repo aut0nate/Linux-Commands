@@ -292,6 +292,9 @@ cp -u <file> <destination>
 # Copy a file and prompt before overwriting
 cp -i <file> <destination>
 
+# Copy a file, but does not overwrite existing files at the destination
+cp -n <file> <destination>
+
 # Copy a file while preserving file attributes such as timestamps and permissions
 cp -p <file> <destination>
 
