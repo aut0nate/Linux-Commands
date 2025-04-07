@@ -2,7 +2,7 @@
 
 [![Linux](https://img.shields.io/badge/Linux-FCC624?logo=linux&logoColor=black)](#)
 
-This repository contains a collection of Linux commands and tools that I’ve found particularly useful as part of my learning process. I have grouped this into categories for easy reference.
+This repository contains a collection of Linux commands and tools that I’ve found particularly useful. I have grouped this into categories for easy reference.
 
 Inspired by: <a href="https://github.com/trinib/Linux-Bash-Commands">trinib/Linux-Bash-Commands</a></p>
 
