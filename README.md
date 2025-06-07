@@ -440,6 +440,21 @@ sort -t , -k 4 -nr <file>
 # Randomly shuffles the lines in a file, displaying them in a random order
 sort -R <file>
 
+# Output the header line, then sort the rest of the file by lines
+# - 'head -n 1' gets the first line (header) of <file>
+# - 'tail -n +2' skips the header and outputs from the second line onward
+# - 'sort' sorts the data rows alphabetically (default)
+(head -n 1 <file> && tail -n +2 <file> | sort)
+
+# Output the header, then sort the data by date (month and day)
+# - 'head -n 1' gets the first line (header) of <file>
+# - 'tail -n +2' skips the header and outputs from the second line onward
+# - 'sort -t',' -k4,4n -k3,3M' sorts using:
+#     - '-t',' sets comma as the field delimiter
+#     - '-k4,4n' sorts numerically by the 4th field (day)
+#     - '-k3,3M' sorts by the 3rd field as a month name (e.g., Jan, Feb)
+(head -n 1 <events.csv> && tail -n +2 <events.csv> | sort -t',' -k4,4n -k3,3M)
+
 # Filter out repeated lines in a file (adjacent duplicates)
 uniq <file>
 
