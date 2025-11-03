@@ -281,7 +281,7 @@ touch -m <file>
 touch -m -t 201812301530.45 <file>
  
 # Change the timestamp of a file to that of another file
-touch <file1> -r <file2>
+touch -r <file1> <file2>
 
 # Copy a file to another file or directory
 cp <file> <file/directory>
