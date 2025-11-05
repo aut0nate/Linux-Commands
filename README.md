@@ -380,11 +380,17 @@ cat <file>
 # Display the contents of a file with line numbers
 cat -n <file>
 
-# Display the first 10 lines of a file (replace with desired number)
-head -n 10 <file>
+# Display the first 10 lines of a file by default
+head <file>
 
-# Display the last 10 lines of a file (replace with desired number)
-tail -n 10 <file>
+# Display the first ~n lines of a file
+head -n <num> <file>
+
+# Display the last 10 lines of a file by default
+tail <file>
+
+# Display the last ~n lines of a file
+tail -n <num> <file>
 
 # Display the contents of a file starting from line ~n (i.e., skips the first ~n lines)
 tail -n +<num> <file>
@@ -476,11 +482,14 @@ diff -y <file1> <file2>
 # Compare the contents of two files with unified context
 diff -u <file1> <file2>
 
-# Cut the second field from a comma-separated file
+# Cut the fifth character from each line in a file
+cut -c 5 <file>
+
+# Cut the second field based on the comma delimiter
 cut -d , -f 2 <file>
 
 # Merges all lines from a file into a single line separated by spaces
-paste -s -d ' ' <file>
+paste -d ' ' -s <file>
 
 # Repeatedly executes <command> every <secs> seconds, highlighting changes in the output
 watch -n <secs> -d <command>
