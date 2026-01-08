@@ -78,12 +78,12 @@ Inspired by: <a href="https://github.com/trinib/Linux-Bash-Commands">trinib/Linu
     - [For Loops](#for-loops)
     - [Case Statements](#case-statements)
   - [Functions](#functions)
-  
+
 ## Command Information
 
 ```bash
 # Display man page of a command
-man <command>                   
+man <command>
 
 # Search man pages for a keyword (similar to apropos)
 man -k <query>
@@ -98,7 +98,7 @@ apropos <query>
 type <command>
 
 # Display all locations of an executable
-type -a <command>                              
+type -a <command>
 
 # Display the executable path for a command (only lists path for executable programs)
 which <command>
@@ -128,13 +128,13 @@ history 10
 history -c
 
 # Clear a command from a specific line
-history -d <line_num>                         
+history -d <line_num>
 
 # View the commands using a specific word
-history | grep <query>                 
+history | grep <query>
 
 # Run the last command executed
-!!                                     
+!!
 
 # TIP
 # Add a space before the command to prevent the command from showing in history
@@ -146,7 +146,7 @@ history | grep <query>
 
 ```bash
 # Print current directory path
-pwd                       
+pwd
 
 # List files and directories in the current directory
 ls
@@ -218,11 +218,11 @@ tree -d
 cd <directory>
 
 # Change to home directory
-cd                        
-cd ~              
+cd
+cd ~
 
 # Change to the previously chosen directory
-cd -                      
+cd -
 
 # Change to the parent of the current directory:
 cd ..
@@ -231,12 +231,12 @@ cd ..
 pushd <directory>
 
 # Change back to the directory in the stack saved by `pushd`
-popd                      
+popd
 ```
 [⬆ ʀᴇᴛᴜʀɴ ᴛᴏ ᴄᴏɴᴛᴇɴᴛꜱ](#contents)
 
 ## Managing Directories
-  
+
 ```bash
 # Create a directory
 mkdir <directory>
@@ -251,10 +251,10 @@ mkdir -p <directory1/directory2>
 mktemp -d
 
 # Delete non-empty directory
-rmdir <directory>                     
+rmdir <directory>
 
 # Delete directory including contents
-rm -r <directory>       
+rm -r <directory>
 ```
 
 [⬆ ʀᴇᴛᴜʀɴ ᴛᴏ ᴄᴏɴᴛᴇɴᴛꜱ](#contents)
@@ -273,13 +273,13 @@ touch -d "yyyy-mm-dd hh:mm:ss" <file>
 
 # Change the access time of a file to the current time
 touch -a <file>
- 
+
 # Change the modification time of a file to the current time
 touch -m <file>
- 
+
 # Change the modification time of a file to a specific date and time
 touch -m -t 201812301530.45 <file>
- 
+
 # Change the timestamp of a file to that of another file
 touch -r <file1> <file2>
 
@@ -345,10 +345,10 @@ ln -s <file/directory_source> <file/directory_source_link>
 
 # The `tee` command reads from standard input and writes to both standard output and one or more files
 # It is useful for logging or saving output while still displaying it in the terminal
-ls -lh /usr/bin/g* | tee bin_out.txt | grep -i "glow" 
+ls -lh /usr/bin/g* | tee bin_out.txt | grep -i "glow"
 
 # Create a temporary file
-mktemp 
+mktemp
 
 # Display detailed information about a file or directory
 stat <file/directory>
@@ -438,7 +438,7 @@ sort -u <file>
 sort -k 2 <file>
 
 # Sort the contents of a file based on the fourth column (key 4) with a comma (,) as the delimiter, and sorts numerically (-n)
-sort -t , -k 4 -n <file> 
+sort -t , -k 4 -n <file>
 
 # Sort the contents of a file based on the fourth column (key 4) with a comma (,) as the delimiter, and sorts numerically in reverse (-nr)
 sort -t , -k 4 -nr <file>
@@ -490,6 +490,9 @@ cut -d , -f 2 <file>
 
 # Merges all lines from a file into a single line separated by spaces
 paste -d ' ' -s <file>
+
+# Display the contents of a file as a neatly aligned table by splitting fields on commas (-s,) and formatting columns (-t)
+column -t -s, <file>
 
 # Repeatedly executes <command> every <secs> seconds, highlighting changes in the output
 watch -n <secs> -d <command>
@@ -1452,7 +1455,7 @@ sudo renice -10 -u <username>
 
 ```bash
 # Kill a process running in the foreground
-CTRL+C                 
+CTRL+C
 # Send the default SIGTERM signal to terminate a process gracefully
 kill <PID>
 
@@ -1742,7 +1745,7 @@ du /path/to/directory
 du -h  # or --human-readable
 
 # Display disk usage of all files and directories in human-readable format (-h), sort the output in reverse numerical order (-rh) to show largest files first
-du -ah /path/to/directory | sort -rh | head 
+du -ah /path/to/directory | sort -rh | head
 
 # Display disk usage up to a specified depth level (e.g., 1 level deep)
 du -d 1  # or --max-depth=1
@@ -1964,7 +1967,7 @@ nslookup
 curl https://example.com
 
 # Return the response body along with the HTTP headers and status code
-curl -i https://example.com 
+curl -i https://example.com
 
 # Follow redirects automatically and return the final response body
 curl -L https://example.com
@@ -2615,13 +2618,13 @@ unset VAR_NAME
 
 ```bash
 # Initialize a variable <variable_name> with the value 123
-<variable_name>=123                
+<variable_name>=123
 
 # Initialize an integer variable <variable_name> with the value 123
-declare -i <variable_name>=123     
+declare -i <variable_name>=123
 
 # Initialize a readonly variable <variable_name> with the value 123
-declare -r <variable_name>=123     
+declare -r <variable_name>=123
 
 # Print the value of the variable <variable_name>
 echo $<variable_name>
