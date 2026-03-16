@@ -270,8 +270,12 @@ touch <file>
 # Create multiple files
 touch file{1..3}
 
-# Create a new empty file with a specific date
+# Change the timestamp of a file
 touch -d "yyyy-mm-dd hh:mm:ss" <file>
+touch -d 9am <file>
+touch -d "yesterday 6am" <file>
+touch -d "10 days ago 23:55" <file>
+touch -d "tomorrow 10:35" <file>
 
 # Change the access time of a file to the current time
 touch -a <file>
