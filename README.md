@@ -243,9 +243,11 @@ mkdir <directory>
 
 # Create multiple directories
 mkdir <directory1> <directory2>
+mkdir {dir1,dir2,dir3}
 
 # Create a nested directory
-mkdir -p <directory1/directory2>
+mkdir -p <directory1/directory2/directory3>
+mkdir -p <directory1/{a,b,c,d}
 
 # Create a temporary directory
 mktemp -d
