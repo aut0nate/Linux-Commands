@@ -214,6 +214,9 @@ tree -a
 # List directory tree
 tree -d
 
+# List directory and files up to a specified depth
+tree -L <num>
+
 # Change to a directory
 cd <directory>
 
