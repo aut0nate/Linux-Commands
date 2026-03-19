@@ -482,6 +482,9 @@ uniq -u <file>
 # Counts the lines in a file
 uniq -c <file>
 
+# Counts the duplicate lines in a file
+uniq -dc <file>
+
 # Compare the contents of two files
 diff <file1> <file2>
 
