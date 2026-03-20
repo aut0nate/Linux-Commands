@@ -540,20 +540,17 @@ ls -l <directory> &> /dev/null
 A pipeline `(|)` connects the output of one command to the input of another, enabling efficient data processing in a chain of commands.
 
 ```bash
-# Example 1: Pipe the output of `ls` to `grep` to filter results containing "<pattern>"
+# Pipe the output of `ls` to `grep` to filter results containing "<pattern>"
 ls | grep "<pattern>"
 
-# Example 2: Pipe the output of `ps` to `grep` to find a specific process
+# Pipe the output of `ps` to `grep` to find a specific process
 ps aux | grep "<process_name>"
 
-# Example 3: Count the number of lines in a file using `wc -l`
-cat <file_name> | wc -l
+# Use `cut` to extract specific columns from a file, and sort the uniqe data
+cut -d ',' -f 1 | sort | uniq
 
-# Example 4: Use `cut` to extract specific columns from a file, and then sort the output
-cat <file.csv> | cut -d ',' -f 1 | sort
-
-# Example 5: Chain multiple commands to extract and manipulate data
-cat <log_file> | grep "<keyword>" | awk '{print $1, $2, $3}' | sort | uniq
+# Chain multiple commands to extract and manipulate data
+grep -i "<pattern>" <file> | awk -F ',' '{print $3}' | sort -u
 ```
 
 ## Finding Files & Directories
