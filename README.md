@@ -386,8 +386,11 @@ echo <text> > <file>
 # Display the contents of a file
 cat <file>
 
-# Display the contents of a file with line numbers
+# Numbers all output lines
 cat -n <file>
+
+# Numbers only the non-empty output lines
+cat -b <file>
 
 # Display the first 10 lines of a file by default
 head <file>
