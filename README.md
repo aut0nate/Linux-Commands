@@ -699,35 +699,47 @@ sudo updatedb
 # Count the total number of lines containing the specified pattern in the file
 grep -c <pattern> <file>
 
-# Display matching lines with their corresponding line numbers
-grep -n <pattern> <file>
+# Search for a whole word only
+grep -w <pattern> <file>
 
 # Perform a case-insensitive search for the specified pattern
 grep -i <pattern> <file>
+
+# Display matching lines with their corresponding line numbers
+grep -n <pattern> <file>
+
+# Display only the matching part of the line
+grep -o <pattern> <file>
 
 # Display only lines that do not match the specified pattern
 grep -v <pattern> <file>
 
 # Display only lines that exactly match the entire pattern (no partial matches)
-grep -x <pattern> <file>
-
-# List only the names of files that contain the specified pattern
-grep -l <pattern> <directory>
-
-# List only the names of files that do not contain the specified pattern
-grep -L <pattern> <directory>
-
-# Search for a pattern using the -e option
-grep -e <pattern> <directory>
-
-# Specify multiple patterns using the -E option
-grep -E <pattern1|pattern2> <file>
-
-# Use multiple patterns from a file, where each pattern is on a new line
-grep -f <pattern_file> <file>
+grep -x <pattern> <file
 
 # Recursively search for the pattern in the specified directory and its subdirectories
 grep -r <pattern> <directory>
+
+# List only the names of files that contain the specified pattern
+grep -rl <pattern> <directory>
+
+# List only the names of files that do not contain the specified pattern
+grep -rL <pattern> <directory>
+
+# Specify multiple patterns using extended regex
+grep -E <pattern> <file>
+
+# Search for the pattern with two lines of context after the matching line
+grep -A 2 <pattern> <file>
+
+# Search for the pattern with one line of context before the matching line
+grep -B 1 <pattern> <file>
+
+# Search for the pattern with two lines of context before and after the matching line
+grep -C 2 <pattern> <file>
+
+# Use multiple patterns from a file, where each pattern is on a new line
+grep -f <pattern_file> <file>
 
 # Search for occurrences of <pattern> in <file> and display matching lines with line numbers (-n) and only the matching part of the line (-o)
 grep -on <pattern> <file>
@@ -738,26 +750,8 @@ grep -wi <pattern> <file>
 # Search for the whole word (case-insensitive) and display matching lines with line numbers in the current directory
 grep -win <pattern> <file>
 
-# Search for the whole word (case-insensitive) with one line of context before the matching line
-grep -win -B 1 <pattern> <file>
-
-# Search for the whole word (case-insensitive) with two lines of context after the matching line
-grep -win -A 2 <pattern> <file>
-
-# Search for the whole word (case-insensitive) with two lines of context before and after the matching line
-grep -win -C 2 <pattern> <file>
-
 # Recursively search for the whole word (case-insensitive) in all files within the current directory, and display only the match count for each file
 grep -wicr <pattern>
-
-# Recursively search for the whole word (case-insensitive) and display only the names of files containing the pattern
-grep -wirl <pattern>
-
-# Recursively search for the whole word (case-insensitive) and display matching lines with line numbers in all files within the current directory
-grep -winr <pattern>
-
-# Recursively search for the whole word (case-insensitive) in the current directory and all its subdirectories, displaying matching lines with line numbers
-grep -win <pattern> ./*
 
 # Search for empty lines in a file and display the line number
 grep -n "^$" <file>
